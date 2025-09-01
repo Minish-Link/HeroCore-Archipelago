@@ -300,6 +300,9 @@ region_exit_table_normal: Dict[str, Dict[str, ExitData]] = {
 		),
 		RegNames.Normal["I,6"]: ExitData(
 			logic = lambda world, state: (not world.options.doors or state.has(ItemNames.Doors["I,5"], world.player))
+		),
+		RegNames.Normal["J,4"]: ExitData(
+			logic = lambda world, state: state.has(ItemNames.Blade, world.player, 2)
 		)
 	},
 	RegNames.Normal["I,6"]: {},
@@ -564,9 +567,6 @@ region_exit_table_hard: Dict[str, Dict[str, ExitData]] = {
 	RegNames.Hard["B,8"]: {
 		RegNames.Hard["A,7"]: ExitData(
 			logic = lambda world, state: (not world.options.doors or state.has(ItemNames.Doors["C,8"], world.player))
-		),
-		RegNames.Hard["A,9"]: ExitData(
-			logic = lambda world, state: state.has(ItemNames.Barriers["A,9"], world.player)
 		)
 	},
 	RegNames.Hard["B,11"]: {},
@@ -938,7 +938,10 @@ region_exit_table_annihilation: Dict[str, Dict[str, ExitData]] = {
 		)
 	},
 	RegNames.Annihilation["G,2"]: {
-		RegNames.Annihilation["E,3"]: ExitData(),
+		RegNames.Annihilation["E,3"]: ExitData(
+			valid = lambda world: world.options.doors,
+			logic = lambda world, state: state.has(ItemNames.Battle_Doors["E,3"], world.player)
+		),
 		RegNames.Annihilation["F,2"]: ExitData(),
 		RegNames.Annihilation["G,4"]: ExitData(
 			logic = lambda world, state: state.has(ItemNames.Barriers["G,4"], world.player)
@@ -1034,9 +1037,6 @@ region_exit_table_annihilation: Dict[str, Dict[str, ExitData]] = {
 		RegNames.Annihilation["H,4"]: ExitData(
 			logic = lambda world, state: (not world.options.doors or state.has(ItemNames.Doors["M,3"], world.player))
 		),
-		RegNames.Annihilation["L,1"]: ExitData(
-			valid = lambda world: world.options.doors,
-			logic = lambda world, state: state.has(ItemNames.Doors["M,3"], world.player)
-		)
+		RegNames.Annihilation["L,1"]: ExitData()
 	}
 }

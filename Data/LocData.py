@@ -174,6 +174,7 @@ locations_doors: Dict[str, int] = {
     LocNames.Doors["C,9"]: 0x628,
     LocNames.Doors["C,10"]: 0x629,
     LocNames.Doors["C,11"]: 0x62A,
+    LocNames.Doors["C,12"]: 0x62B,
     LocNames.Doors["D,2"]: 0x631,
     LocNames.Doors["D,3"]: 0x632,
     LocNames.Doors["D,10"]: 0x639,
@@ -1078,6 +1079,10 @@ locations_hard: Dict[str, HeroCoreLocData] = {
         region = RegNames.Hard["F,6"],
         valid = lambda world: world.options.doors
     ),
+    LocNames.Doors["G,6"]: HeroCoreLocData(
+        region = RegNames.Hard["B,4"],
+        valid = lambda world: world.options.doors
+    ),
     LocNames.Doors["M,6"]: HeroCoreLocData(
         region = RegNames.Hard["J,4"],
         valid = lambda world: world.options.doors
@@ -1108,7 +1113,8 @@ locations_hard: Dict[str, HeroCoreLocData] = {
     ),
     LocNames.Doors["L,8"]: HeroCoreLocData(
         region = RegNames.Hard["L,8"],
-        valid = lambda world: world.options.doors
+        valid = lambda world: world.options.doors,
+        logic = lambda world, state: state.has(ItemNames.Suit, world.player, 2)
     ),
     LocNames.Doors["N,8"]: HeroCoreLocData(
         region = RegNames.Hard["N,5"],

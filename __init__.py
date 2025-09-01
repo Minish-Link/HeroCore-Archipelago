@@ -36,6 +36,8 @@ class HeroCoreWorld(World):
     options: HeroCoreOptions
     web = HeroCoreWeb()
 
+    ut_can_gen_without_yaml = True
+
     tracker_world = {
         "map_page_folder": "Maps",
         "map_page_maps": "maps.json",
@@ -72,6 +74,8 @@ class HeroCoreWorld(World):
 
     def fill_slot_data(self) -> Dict[str, Any]:
         return {
+            "ModVersion": 2,
+            "ModSemantic": "1.0.0 prerelease",
             "Difficulty": self.options.difficulty.value,
             "GoalComputers": self.options.goal_computers.value,
 
@@ -86,6 +90,33 @@ class HeroCoreWorld(World):
             "ExpelSkips": self.options.expel_skips.value,
             "DeathLink": self.options.deathlink.value,
         }
+    
+    def generate_early(self):
+        # If using Universal Tracker
+        if hasattr(self.multiworld, "re_gen_passthrough"):
+            if "Hero Core" in self.multiworld.re_gen_passthrough:
+                passthrough = self.multiworld.re_gen_passthrough["Hero Core"]
+                self.options.difficulty.value = passthrough["Difficulty"]
+                self.options.goal_computers.value = passthrough["GoalComputers"]
+                self.options.powerups.value = passthrough["PowerUps"]
+                self.options.level_ups.value = passthrough["LevelUps"]
+                self.options.computers.value = passthrough["Computers"]
+                self.options.generators.value = passthrough["Generators"]
+                self.options.save_points.value = passthrough["SavePoints"]
+                self.options.doors.value = passthrough["Doors"]
+                self.options.miscellaneous_locations.value = passthrough["Miscellaneous"]
+                self.options.expel_skips.value = passthrough["ExpelSkips"]
+
 
     def set_rules(self):
+        loc_table: Dict[str, HeroCoreLocData] = None
+        if self.options.difficulty.value == self.options.difficulty.option_normal:
+            loc_table = locations_normal
+        elif self.options.difficulty.value == self.options.difficulty.option_hard:
+            loc_table = locations_hard
+        elif self.options.difficulty.value == self.options.difficulty.option_annihilation:
+            loc_table = locations_annihilation
+        for loc in self.multiworld.get_locations(self.player):
+            set_rule(loc,lambda state, temploc=loc: loc_table[temploc.name].logic(self,state))
+
         self.multiworld.completion_condition[self.player] = lambda state: state.has(ItemNames.Victory, self.player)

@@ -2,19 +2,19 @@
     {
         "name": "Normal",
         "img": "Normal.png",
-        "location_size": 12,
-        "location_border_thickness": 1
+        "location_size": 20,
+        "location_border_thickness": 2
     },
     {
         "name": "Hard",
         "img": "Hard.png",
-        "location_size": 12,
-        "location_border_thickness": 1
+        "location_size": 20,
+        "location_border_thickness": 2
     },
     {
-        "name": "Annihilator",
-        "img": "Annihilator.png",
-        "location_size": 12,
-        "location_border_thickness": 1
+        "name": "Annihilation",
+        "img": "Annihilation.png",
+        "location_size": 20,
+        "location_border_thickness": 2
     }
 ]

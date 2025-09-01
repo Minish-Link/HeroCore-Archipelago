@@ -10,15 +10,16 @@ To get the music, you will need to download the original game at https://remar.s
 Then just dump the music files from there into the randomizer's music folder.
 
 ## What does this randomizer change?
-This randomizer turns the Blaster, Suit, Blade, and Pattern Scanner upgrades into items that get shuffled into the randomizer's item pool. Each group of Barriers surrounding each of the Generators are also added as an item that removes the barriers (10 in Normal and Hard, 3 in Annihilator.) Optionally, Computers and Level ups can also be shuffled into the item pool.
-
-Locations that contain items include:
-- Powerups after defeating a Boss
--- Sends an additional check if Level ups are shuffled
+This randomizer lets you turn any of the following into items that can appear anywhere in the world, and their respective locations can contain any random item:
 - Destroying Generators
-- Computers (If their items are shuffled)
+- The Blade, Suit, Blaster, and Pattern Scanner powerups from Bosses
+- Level Ups from Bosses
+- Computers
+- Doors that require you to defeat all enemies in a room.
+- Battle Doors
+- Save Points
 
-This randomizer allows you to choose any of the three difficulties as your goal, with the option to additionally require obtaining all 10 Computers for True ending (Normal and Hard difficulty only)
+This randomizer allows you to choose any of the three difficulties as your goal, with the option to additionally require up to 10 computers to access the final boss.
 
 ## Notes
-This early build of the randomizer does not support displaying messages received from the server. If you wish to see items that you are sending out, or see more information about items that you are receiving, a Text client is recommended. Furthermore, this randomizer does not save your map progress between sessions. If you quit the game and reconnect later, you will not be able to see which areas you've already been to, nor warp to any saves you've visited in previous sessions (unless you have the Pattern Scanner.) These issues will be fixed in later versions of the randomizer.
+This early build of the randomizer does not fully support displaying messages received from the server. If you wish to see items that you are sending out, or see more information about items that you are receiving, a Text client is recommended. Universal Tracker is especially recommended, as this apworld comes with maps for each of the difficulties, showing you what rooms are in logic.

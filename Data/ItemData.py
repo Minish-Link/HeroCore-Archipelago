@@ -357,6 +357,7 @@ items_hard: Dict[str, ItemInfo] = {
              item_class = ItemClassification.filler),
     ItemInfo(name = ItemNames.Doors["B,6"], valid = lambda world: world.options.doors),
     ItemInfo(name = ItemNames.Doors["F,6"], valid = lambda world: world.options.doors),
+    ItemInfo(name = ItemNames.Doors["G,6"], valid = lambda world: world.options.doors),
     ItemInfo(name = ItemNames.Doors["M,6"], valid = lambda world: world.options.doors),
     ItemInfo(name = ItemNames.Doors["A,7"], valid = lambda world: world.options.doors),
     ItemInfo(name = ItemNames.Doors["H,7"], valid = lambda world: world.options.doors),

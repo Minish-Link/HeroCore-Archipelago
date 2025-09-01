@@ -3,7 +3,7 @@ from typing import Any
 map_pages = {
     "Normal": 0,
     "Hard": 1,
-    "Annihilator": 2
+    "Annihilation": 2
 }
 
 def map_page_index(data: Any):
