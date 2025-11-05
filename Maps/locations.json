@@ -31,8 +31,8 @@
       {
         "name": "L,1",
         "sections": [
-          { "name": "Powerup from Plasma Hydra (L,1)" },
-          { "name": "Level Up from Plasma Hydra (L,1)" },
+          { "name": "Powerup from Plasma Hydra - (L,1)" },
+          { "name": "Level Up from Plasma Hydra - (L,1)" },
           { "name": "Defeat all Enemies - (L,1)" }
         ],
         "map_locations": [
@@ -98,8 +98,8 @@
       {
         "name": "I,2",
         "sections": [
-          { "name": "Powerup from Grand Mother (I,2)" },
-          { "name": "Level Up from Grand Mother (I,2)" },
+          { "name": "Powerup from Grand Mother - (I,2)" },
+          { "name": "Level Up from Grand Mother - (I,2)" },
           { "name": "Defeat all Enemies - (I,2)" }
         ],
         "map_locations": [
@@ -1766,7 +1766,7 @@
         "name": "L,7",
         "sections": [
           { "name": "Powerup from Plasma Hydra - (L,7)" },
-          { "name": "Level Up from Plasma Hydra (L,7)" },
+          { "name": "Level Up from Plasma Hydra - (L,7)" },
           { "name": "Defeat all Enemies - (L,7)" }
         ],
         "map_locations": [
