@@ -667,7 +667,7 @@ region_exit_table_hard: Dict[str, Dict[str, ExitData]] = {
 	RegNames.Hard["G,2"]: {
 		RegNames.Hard["E,1"]: ExitData(
 			logic = lambda world, state: (state.has(ItemNames.Barriers["H,4"], world.player) or
-								 state.has(ItemNames.Saves["E,2"]))
+								 state.has(ItemNames.Saves["E,2"], world.player))
 		),
 		RegNames.Hard["I,5"]: ExitData(
 			logic = lambda world, state: (state.has(ItemNames.Doors["I,4"], world.player) or
